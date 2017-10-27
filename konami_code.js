@@ -8,8 +8,10 @@ function init() {
     while (index < code.length) {
       if (e.which || e.detail === code[index]) {
         index++;
-      } else {
+      } else if (e.which || e.detail != code[index]){
         index = 0;
+      } else {
+        alert('Konami code entered!')
       }
     }
   });
