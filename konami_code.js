@@ -1,19 +1,20 @@
 const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
-const input = document.getElementsByTagName('body');
 let index = 0;
 
-
 function init() {
-  input.addEventListener('keydown', function(e) {
-    while (index < code.length) {
-      if (e.which || e.detail === code[index]) {
-        index++;
-      } else {
-        index = 0;
-      }
-    }
-    alert('Konami code successful!');
+  document.body.addEventListener('keydown', function(event) {
+    onKeyDownHandler(event);
   });
 }
 
-init();
+function onKeyDownHandler(e) {
+  const key = parseInt(e.detail || e.which);
+
+  if (key === code[index]) {
+    index++;
+
+    if (index === code.length) {
+      alert('Konami code successful!');
+    }
+  }
+}
