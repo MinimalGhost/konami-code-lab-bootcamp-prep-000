@@ -12,6 +12,7 @@ function init() {
         index = 0;
       }
     }
+    alert('Konami code successful!');
   });
 }
 
