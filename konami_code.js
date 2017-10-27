@@ -16,5 +16,7 @@ function onKeyDownHandler(e) {
     if (index === code.length) {
       alert('Konami code successful!');
     }
+  } else {
+    index = 0;
   }
 }
